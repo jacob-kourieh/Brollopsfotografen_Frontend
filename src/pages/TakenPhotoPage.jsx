@@ -17,12 +17,12 @@ function TakenPhotoPage() {
 
     return (
         <section className="camera-form">
-            <img
+            <img alt=""
                 className="album-logo"
                 src={albumLogo}
                 onClick={() => navigate("/AlbumPage")}
             ></img>
-            <img className="camera-cap" ref={photoRef} />
+            <img alt="" className="camera-cap" ref={photoRef} />
             <button className="camera-btn" onClick={takeNewPic}>
                 FÅNGA ETT NYTT ÖGONBLICK
             </button>

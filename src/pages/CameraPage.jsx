@@ -12,7 +12,7 @@ function CameraPage() {
 
     async function loggedIn() {
         const token = sessionStorage.getItem("token");
-        const response = await fetch("http://localhost:5565/api/loggedin", {
+        const response = await fetch("https://localhost:5565/api/loggedin", {
             headers: { Authorization: `Bearer ${token}` },
         });
         const data = await response.json();
@@ -46,7 +46,7 @@ function CameraPage() {
         };
 
         //fetch for take a photo
-        const response = await fetch("http://localhost:5565/api/takefoto", {
+        const response = await fetch("https://brollopsbackend.onrender.com/api/takefoto", {
             method: "POST",
             body: JSON.stringify(userInfo),
             headers: { "Content-Type": "application/json" },
@@ -96,7 +96,7 @@ function CameraPage() {
     return (
         <section className="camera-form">
             <h2 className="hello-heading">Hello {username} </h2>
-            <img className="album-logo" src={albumLogo} onClick={() => navigate("/AlbumPage")} />
+            <img alt="" className="album-logo" src={albumLogo} onClick={() => navigate("/AlbumPage")} />
             <button className="logout-btn" onClick={() => logout()}>
                 Logga ut
             </button>

@@ -18,7 +18,7 @@ function SignupPage() {
                 email: email,
                 role: "guest",
             };
-            const response = await fetch("http://localhost:5565/api/signup", {
+            const response = await fetch("https://brollopsbackend.onrender.com/api/signup", {
                 method: "POST",
                 body: JSON.stringify(account),
                 headers: { "Content-Type": "application/json" },

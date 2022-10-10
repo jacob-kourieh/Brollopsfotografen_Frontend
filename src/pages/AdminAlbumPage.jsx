@@ -15,7 +15,7 @@ function AdminAlbumPage() {
             username: user,
 
         };
-        const response = await fetch("http://localhost:5565/api/album", {
+        const response = await fetch("https://brollopsbackend.onrender.com/api/album", {
             method: "POST",
             body: JSON.stringify(reqObj),
             headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ function AdminAlbumPage() {
             img: pic,
             username: username,
         };
-        const response = await fetch("http://localhost:5565/api/deletephoto", {
+        const response = await fetch("https://brollopsbackend.onrender.com/api/deletephoto", {
             method: "DELETE",
             body: JSON.stringify(reqObj),
             headers: { "Content-Type": "application/json" },
@@ -65,9 +65,10 @@ function AdminAlbumPage() {
             </button>
             {pictures.map((pic, i) => (
                 <article className="img-form" key={i}>
-                    <img className="album-pic" src={pic}></img>
+                    <img alt="ff" className="album-pic" src={pic}></img>
 
                     <img
+                        alt="pic"
                         src={close}
                         className="remove-btn"
                         onClick={() => deletePhoto(pic)}
