@@ -1,12 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import CircularProgress from '@mui/material/CircularProgress';
+import logo from "../imgs/logo.svg";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function SignupPage() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -18,14 +22,17 @@ function SignupPage() {
                 email: email,
                 role: "guest",
             };
+            setLoading(true)
             const response = await fetch("https://brollopsbackend.onrender.com/api/signup", {
                 method: "POST",
                 body: JSON.stringify(account),
                 headers: { "Content-Type": "application/json" },
             });
             const data = await response.json();
+            setLoading(false)
+
             console.log(data);
-            console.log(account);
+
             if (data.success) {
                 localStorage.setItem("username", account.username);
                 navigate("/loggain");
@@ -40,28 +47,47 @@ function SignupPage() {
     return (
         <section className="container">
             <section className="login-form">
+                <img className="login-logo" src={logo} alt="" onClick={() => navigate("/")} />
                 <h2 className="heading">Skapa Ett Konto</h2>
-                <input
-                    type="text"
-                    placeholder="username"
-                    className="form_input"
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="email"
-                    className="form_input"
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="password"
-                    className="form_input"
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button className="btn" onClick={() => createAccount()}>
-                    Skapa ett konto
-                </button>
+
+                <TextField sx={{
+                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                    "& .MuiOutlinedInput-root": {
+                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                    },
+                    "& .MuiOutlinedInput-root:active": {
+                        "& > fieldset": { borderColor: "white" },
+                    },
+                }}
+                    variant="outlined" label="Username" onChange={(e) => setUsername(e.target.value)} />
+
+
+                <TextField sx={{
+                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                    "& .MuiOutlinedInput-root": {
+                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                    },
+                    "& .MuiOutlinedInput-root:active": {
+                        "& > fieldset": { borderColor: "white" },
+                    },
+                }}
+                    variant="outlined" label="Email" onChange={(e) => setEmail(e.target.value)} />
+
+
+                <TextField sx={{
+                    "& .MuiInputLabel-root": { color: 'white' },//styles the label
+                    "& .MuiOutlinedInput-root": {
+                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                    },
+                    "& .MuiOutlinedInput-root:active": {
+                        "& > fieldset": { borderColor: "white" },
+                    },
+                }}
+                    variant="outlined" label="Password" onChange={(e) => setPassword(e.target.value)} />
+
+
+                {loading ? <CircularProgress color="success" /> : null}
+                <Button variant="contained" onClick={() => createAccount()} disabled={loading}>Skapa ett konto</Button>
             </section>
         </section>
     );

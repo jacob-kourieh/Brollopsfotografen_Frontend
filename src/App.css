@@ -1,5 +1,5 @@
 body {
-  background-color: #1b1d1e;
+  background-color: #151b42d1;
 }
 
 
@@ -61,8 +61,7 @@ input {
 
 
 .login-logo {
-  position: absolute;
-    top: 6rem;
+  margin: 0px 0px 16px 0px;
     width: 3rem;
     
 }
@@ -73,14 +72,15 @@ input {
 }
 
 .btn {
-  width: 50%;
+  width: 22%;
   padding: 0.5rem;
-  margin: 5px;
+  margin: -1px;
   font-size: 1rem;
   border-radius: 5px;
   border: none;
-  color: rgb(67, 26, 26);
-  background-color: rgb(184, 173, 173);
+  color: rgb(0 0 0);
+  background-color: rgb(211 211 211 / 66%);
+  font-weight: 600;
 }
 
 .logout-btn {
@@ -108,9 +108,6 @@ input {
   color: white;
 }
 .heading {
-  position: absolute;
-  text-align: center;
-  top: 5rem;
   color: white;
 }
 
