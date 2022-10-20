@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import albumLogo from "../imgs/photoAlbum.svg";
+import Button from '@mui/material/Button';
 
 function CameraPage() {
     const navigate = useNavigate();
@@ -95,16 +96,19 @@ function CameraPage() {
 
     return (
         <section className="camera-form">
-            <h2 className="hello-heading">Hello {username} </h2>
+            <h2 className="hello-heading"> Welcome <span className="inlogning-name">{username}</span>  </h2>
+
             <img alt="" className="album-logo" src={albumLogo} onClick={() => navigate("/AlbumPage")} />
-            <button className="logout-btn" onClick={() => logout()}>
-                Logga ut
-            </button>
+            <div className="logout-btn"> <Button variant="contained" size="small" onClick={() => logout()} >Logga ut</Button> </div>
+
             <video
                 style={{ width: "400px" }}
                 ref={videoRef}
             ></video>
-            <button className="camera-btn" onClick={() => takePhoto()}>FÖREVIGA ETT ÖGONBLICK</button>
+
+            <Button variant="contained" disableElevation onClick={() => takePhoto()}> FÖREVIGA ETT ÖGONBLICK </Button>
+
+
             <canvas ref={photosRef}></canvas>
         </section>
     );

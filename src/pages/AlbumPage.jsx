@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cameraLogo from "../imgs/logo.svg";
 import close from "../imgs/closeIcon.svg";
+import Button from '@mui/material/Button';
 
 function AlbumPage() {
     const user = localStorage.getItem("username");
@@ -64,9 +65,7 @@ function AlbumPage() {
                 alt=""
                 onClick={() => navigate("/CameraPage")}
             />
-            <button className="logout-btn" onClick={() => logout()}>
-                Logga ut
-            </button>
+            <div className="logout-btn"> <Button variant="contained" size="small" onClick={() => logout()} >Logga ut</Button> </div>
 
             {pictures.map((pic, i) => (
                 <article className="img-form" key={i}>

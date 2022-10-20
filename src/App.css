@@ -7,6 +7,14 @@ button {
   cursor: pointer;
 }
 
+.inlogning-name {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+.heading-flex {
+  display: flex;
+}
 input {
   padding: 1rem;
   width: 60%;
@@ -85,13 +93,9 @@ input {
 
 .logout-btn {
   position: absolute;
-  padding: 8px;
-  border-radius: 5px;
-  padding: 8px;
-  border-radius: 5px;
   left: 1rem;
   top: 1rem;
-  border: none;
+ 
 }
 
 

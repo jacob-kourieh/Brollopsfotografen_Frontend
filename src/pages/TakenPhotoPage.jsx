@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import albumLogo from "../imgs/photoAlbum.svg";
+import Button from '@mui/material/Button';
+
+
 function TakenPhotoPage() {
     let getPhoto = localStorage.getItem("photo");
 
@@ -23,9 +26,10 @@ function TakenPhotoPage() {
                 onClick={() => navigate("/AlbumPage")}
             ></img>
             <img alt="" className="camera-cap" ref={photoRef} />
-            <button className="camera-btn" onClick={takeNewPic}>
-                FÅNGA ETT NYTT ÖGONBLICK
-            </button>
+
+            <Button variant="contained" disableElevation onClick={takeNewPic}> FÅNGA ETT NYTT ÖGONBLICK </Button>
+
+
         </section>
     );
 }

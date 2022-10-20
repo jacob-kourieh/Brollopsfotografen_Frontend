@@ -58,10 +58,10 @@ function LoginPage() {
                 <TextField sx={{
                     "& .MuiInputLabel-root": { color: 'white' },//styles the label
                     "& .MuiOutlinedInput-root": {
-                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                        "& > fieldset": { borderColor: "white", color: 'white', width: "1" },
                     },
                     "& .MuiOutlinedInput-root:active": {
-                        "& > fieldset": { borderColor: "white" },
+                        "& > fieldset": { borderColor: "white", color: 'white' },
                     },
                 }}
                     variant="outlined" label="Username" onChange={(e) => setUsername(e.target.value)} />
@@ -69,8 +69,10 @@ function LoginPage() {
                 <TextField sx={{
                     "& .MuiInputLabel-root": { color: 'white' },//styles the label
                     "& .MuiOutlinedInput-root": {
-                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                        "& > fieldset": { borderColor: "white", color: 'white', width: "1" },
                     },
+
+
                     "& .MuiOutlinedInput-root:active": {
                         "& > fieldset": { borderColor: "white", color: 'white' },
                     },

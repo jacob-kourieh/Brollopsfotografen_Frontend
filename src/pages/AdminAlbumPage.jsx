@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import close from "../imgs/closeIcon.svg";
+import Button from '@mui/material/Button';
 
 
 function AdminAlbumPage() {
@@ -59,10 +60,8 @@ function AdminAlbumPage() {
 
     return (
         <section className="album-container">
-            <h3 className="text-heading"> Hello {user} </h3>
-            <button className="logout-btn" onClick={() => logout()}>
-                Logout
-            </button>
+            <h3 className="text-heading"> Welcome <span className="inlogning-name"> {user} </span></h3>
+            <div className="logout-btn"> <Button variant="contained" size="small" onClick={() => logout()} >Logga ut</Button> </div>
             {pictures.map((pic, i) => (
                 <article className="img-form" key={i}>
                     <img alt="ff" className="album-pic" src={pic}></img>

@@ -47,13 +47,13 @@ function SignupPage() {
     return (
         <section className="container">
             <section className="login-form">
-                <img className="login-logo" src={logo} alt="" onClick={() => navigate("/")} />
+                <img className="login-logo" src={logo} alt="" onClick={() => navigate("/loggain")} />
                 <h2 className="heading">Skapa Ett Konto</h2>
 
                 <TextField sx={{
                     "& .MuiInputLabel-root": { color: 'white' },//styles the label
                     "& .MuiOutlinedInput-root": {
-                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                        "& > fieldset": { borderColor: "white", color: 'white', width: "1" },
                     },
                     "& .MuiOutlinedInput-root:active": {
                         "& > fieldset": { borderColor: "white" },
@@ -65,7 +65,7 @@ function SignupPage() {
                 <TextField sx={{
                     "& .MuiInputLabel-root": { color: 'white' },//styles the label
                     "& .MuiOutlinedInput-root": {
-                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                        "& > fieldset": { borderColor: "white", color: 'white', width: "1" },
                     },
                     "& .MuiOutlinedInput-root:active": {
                         "& > fieldset": { borderColor: "white" },
@@ -77,7 +77,7 @@ function SignupPage() {
                 <TextField sx={{
                     "& .MuiInputLabel-root": { color: 'white' },//styles the label
                     "& .MuiOutlinedInput-root": {
-                        "& > fieldset": { borderColor: "white", backgroundColor: "#3f41429c" },
+                        "& > fieldset": { borderColor: "white", color: 'white', width: "1" },
                     },
                     "& .MuiOutlinedInput-root:active": {
                         "& > fieldset": { borderColor: "white" },
